@@ -1,6 +1,8 @@
 library(readr)
 library(devtools)
 
+untar("data-raw/data.tgz", exdir = 'data-raw')
+
 badges <- read_csv('data-raw/Badges.csv')
 devtools::use_data(badges, overwrite = TRUE, compress = "xz")
 
